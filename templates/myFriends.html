@@ -1,0 +1,10 @@
+У Вас в списке {{ returnAmount(activeUser.friends) }} друзей
+<table>
+	<tr class = 'smbBox' data-ng-repeat = '(friendKey, friendValue) in activeUser.friends' >
+	<td>{{friendValue.name}}</td>
+	<td><button data-ng-click = 'sendMessage()'>Написать</button></td>
+	<td><button data-ng-click = 'deleteFromFriends()'>Удалить</button></td>
+	<td>{{peopleList[friendKey].age}}</td>
+	<td>{{returnAmount(peopleList[friendKey].friends)}}</td>
+</tr>
+</table>

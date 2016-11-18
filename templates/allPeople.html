@@ -1,0 +1,9 @@
+<table>
+	<tr class = 'humanBox' data-ng-repeat = '(humanKey, humanValue) in peopleList' >
+		<td>{{humanValue.name}}</td>
+		<td>возраст: {{humanValue.age}}</td>
+		<td>Друзей: {{returnAmount(humanValue.friends)}} штука</td>
+		<td><button data-ng-click = 'addToFriends(humanKey)'>Добавить</button></td>
+		<td><button data-ng-click = 'createActiveUser(humanKey)'>Зайти под пользователем</button></td>
+	</tr>
+</table>
