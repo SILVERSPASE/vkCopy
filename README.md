@@ -1,2 +1,2 @@
-# bankTerminal
-Demo: https://silverspase.github.io/bankTerminal/
+# my copy of social network
+Demo: https://silverspase.github.io/vkCopy/
