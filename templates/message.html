@@ -1,0 +1,23 @@
+	<h3 class='tac'>История переписки с {{peopleList[receiver].name}}</h3>
+<div class="messageBoxWrapper">
+	<div class="messageBoxInner" id = "messageBoxInner">
+		
+		<table>
+			<tr data-ng-repeat = '(messageKey, messageValue) in messageHistory' repeat-end="onEnd()">
+				<td>{{peopleList[messageValue.sender].name}}</td>
+				<td>{{messageValue.message}}</td>
+				<td class='tar'>{{messageValue.date | date:'dd.MM.yy HH:mm:ss'}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+	<form data-ng-submit = 'sendMessage(textMessage)' class='sendMessageForm'>
+		<div class="col-md-2"></div>
+		<div class="col-md-7 tac">
+			<textarea data-ng-model = 'textMessage' name="" id="" cols="30" rows="3" required></textarea>
+		</div>
+		<div class="col-md-3">
+			<button type='submit'>Отправить</button>
+		</div>
+	</form>
+
