@@ -8,6 +8,11 @@ app.config(function ($routeProvider) {
     })
     .when('/allPeople', {
       templateUrl: 'templates/allPeople.html'
+    })
+    .when('/message', {
+      templateUrl: 'templates/message.html'
+    })
+    .when('/allMessages', {
+      templateUrl: 'templates/allMessages.html'
     });
-
 });

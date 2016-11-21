@@ -1,10 +1,27 @@
-У Вас в списке {{ returnAmount(activeUser.friends) }} друзей
+У Вас в списке {{ returnAmount(peopleList[activeUser].friends) }} друзей
 <table>
-	<tr class = 'smbBox' data-ng-repeat = '(friendKey, friendValue) in activeUser.friends' >
-	<td>{{friendValue.name}}</td>
-	<td><button data-ng-click = 'sendMessage()'>Написать</button></td>
-	<td><button data-ng-click = 'deleteFromFriends()'>Удалить</button></td>
-	<td>{{peopleList[friendKey].age}}</td>
-	<td>{{returnAmount(peopleList[friendKey].friends)}}</td>
-</tr>
-</table>
+	<tr>
+		<th>Имя:</th>
+		<th></th>
+		<th></th>
+		<th>Возраст</th>
+		<th>Количество друзей</th>
+	</tr>
+	<tr class = 'smbBox' data-ng-repeat = '(friendKey, friendValue) in peopleList[activeUser].friends'>
+		<td>{{peopleList[friendValue].name}}</td>
+		<td><a data-ng-click = 'createReceiver(friendValue); getMessageHistory()' href ="#/message">Написать</a></td>
+
+		<td>
+			<div class = 'promtWrapper'>
+				<button data-ng-click = 'showPromtDeleteUser = true'>Удалить</button>
+				<div data-ng-show = 'showPromtDeleteUser' class = 'showPromt showPromtBlock'>
+					<span>Уверены?</span>
+					<button data-ng-click = 'deleteFromFriends(friendKey); showPromtDeleteUser = false'>Да</button>
+					<button data-ng-click = 'showPromtDeleteUser = false'>Отмена</button>
+				</div>
+			</div>
+		</td>
+		<td>{{peopleList[friendValue].age}}</td>
+		<td>{{returnAmount(peopleList[friendValue].friends)}}</td>
+	</tr>
+</table> 

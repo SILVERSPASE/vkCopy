@@ -2,7 +2,8 @@ body{background: #0d2b28;padding: 50px 10px 10px 10px;font-size:18px;color: #c4e
 tr {border-bottom: 1px solid #427570;}
 th, td {padding: 5px 10px;}
 td span{display: block;}
-input, select {color:#2169b9; padding: 0 5px; margin: 5px 0; line-height: 30px; height: 30px;}
+input, select, textarea {color:#2169b9; padding: 0 5px; margin: 5px 0; line-height: 30px; height: 30px;}
+textarea {width: 100%; height: 60px; }
 table {width: 100%;}
 ul li{list-style-type: none;}
 ul{padding: 0;}
@@ -15,3 +16,10 @@ ul li a{display: block;}
 button, .button, a {display: inline-block;padding: 5px 10px;border: 1px solid #1050a9;margin: 10px 0;background: #003c36;color: #87cdff; transition: .3s;}
 a:hover, button:hover, .button:hover{text-decoration: none;background: #1aafa0;color: #e2fffc; cursor: pointer;}
 
+.promtWrapper{position: relative;}
+.showPromt{position: absolute;top: 0px;left: -85px;z-index: 10;background: #0d2b28;width: 245px;text-align: right;}
+.showPromt span{display: inline-block;}
+
+.sendMessageForm{padding-top: 20px;}
+.messageBoxWrapper{height: 300px; border: 1px solid #427570;  position: relative;}
+.messageBoxInner{position: absolute; bottom: 0; overflow-y: auto; max-height: 100%; width: 100%;}
