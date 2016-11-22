@@ -17,8 +17,9 @@ button, .button, a {display: inline-block;padding: 5px 10px;border: 1px solid #1
 a:hover, button:hover, .button:hover{text-decoration: none;background: #1aafa0;color: #e2fffc; cursor: pointer;}
 
 .promtWrapper{position: relative;}
-.showPromt{position: absolute;top: 0px;left: -85px;z-index: 10;background: #0d2b28;width: 245px;text-align: right;}
-.showPromt span{display: inline-block;}
+.showPromt{position: absolute;top: 0px;left: -85px;z-index: 10;background: #0d2b28; padding:0 5px; width: 255px;
+    text-align: right; border:1px solid #427570;}
+.showPromt span{display: inline-block;   }
 
 .sendMessageForm{padding-top: 20px;}
 .messageBoxWrapper{height: 300px; border: 1px solid #427570;  position: relative;}

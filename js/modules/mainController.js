@@ -1,18 +1,21 @@
 app.controller('mainCtrl', function($scope, $dataStorage) {
+	$scope.showPromtAddUser = false;
 	$scope.leftMenu = $dataStorage.getLeftMenu();
 	$scope.peopleList = $dataStorage.getPeopleList();
-
+	$scope.showPromtDeleteUser = false;
 	$scope.activeUser = 0;
+
+	$scope.getPeopleListArr = Object.keys($scope.peopleList);
+
 
 	$scope.returnAmount = function(humanFriends){
 		// console.log(humanFriends.length);
 		return Object.keys(humanFriends).length;
 	};
 
-	$scope.createActiveUser = function(humanKey){
-		// $scope.activeUser = {};
-		$scope.activeUser = humanKey;
-		console.log($scope.activeUser);
+	$scope.createActiveUser = function(humanIndex){
+		$scope.activeUser = {};
+		$scope.activeUser = humanIndex;
 	}
 
 	$scope.addToFriends = function(humanKey){
@@ -25,14 +28,20 @@ app.controller('mainCtrl', function($scope, $dataStorage) {
 		}
 	};
 
-		// $scope.isFriend = function(humanKey){
-	// 	console.log($scope.peopleList[$scope.activeUser].friends);
-	// 	for (var i = 0; i < $scope.peopleList[$scope.activeUser].friends.length; i++){
-	// 			if($scope.peopleList[$scope.activeUser].friends.indexOf(humanKey)){
-	// 				return true;
-	// 		}
-	// 	}
-	// };
-});
 
+// delete friend
+	$scope.deleteFromFriends = function(friendKey){
+		$scope.peopleList[$scope.activeUser].friends.splice($scope.peopleList[$scope.activeUser].friends.indexOf(+friendKey), 1);
+	};
+
+	$scope.isFriend = function(humanIndex){
+		return $scope.peopleList[$scope.activeUser].friends.some(function(friend){
+			  return friend == humanIndex;
+		})
+	};
+	// $scope.isFriend = function(humanIndex){
+	// 	return $scope.peopleList[$scope.activeUser].friends.indexOf(+humanIndex) !== -1;
+	// };
+
+});
 

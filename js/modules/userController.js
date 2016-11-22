@@ -5,10 +5,6 @@ app.controller('userCtrl', function($scope, $dataStorage, $timeout) {
 
 
 
-// delete friend
-	$scope.deleteFromFriends = function(friendKey){
-		$scope.peopleList[$scope.activeUser].friends.splice(friendKey, 1);
-	};
 
 // send a message
 	$scope.sendMessage = function(textMessage){

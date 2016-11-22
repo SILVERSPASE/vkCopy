@@ -9,8 +9,11 @@ app.service('$dataStorage', function () {
 		return leftMenu;
 	};
 
+	var names = ["Art", "Donni", "Max", "Eva", "Nata", "Kate", "Lisa", "Anna", "John", "Andy", "Legolas", "Mark", "Hero", "Peter", "Tony", "Homer", "Steven", "Eragorn"]
+
+
 	var peopleList = {
-			0 :{name: "Art",      age:20, friends: [2,7]},
+			0 :{name: "Art",      age:20, friends: [2,7,5]},
 			1: {name: "Donni",    age:21, friends: []},
 			2: {name: "Max",      age:21, friends: [1,7,5,0]},
 			3: {name: "Eva",      age:22, friends: [7]},
